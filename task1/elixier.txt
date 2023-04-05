@@ -1,0 +1,12 @@
+defmodule Fibonacci do
+  def fibonacci(n) do
+    arr = [0, 1]
+    for i <- 2..(n-1) do
+      arr = arr ++ [arr[i - 1] + arr[i - 2]]
+    end
+    arr
+  end
+end
+
+IO.inspect Fibonacci.fibonacci(3)
+IO.inspect Fibonacci.fibonacci(4)
