@@ -1,0 +1,23 @@
+function binary_search(arr::Array{T}, x::T) where T <: Real
+    left = 1
+    right = length(arr)
+    while left <= right
+        mid = (left + right) ÷ 2
+        if arr[mid] == x
+            return mid
+        elseif arr[mid] < x
+            left = mid + 1
+        else
+            right = mid - 1
+        end
+    end
+    return -1 # not found
+end
+
+arr = [1, 2, 3, 4, 5]
+x = 3
+
+println(binary_search(arr, x)) # prints 3 (the index of x in arr)
+
+
+// You can run this code in     --https://www.tutorialspoint.com/execute_julia_online.php
